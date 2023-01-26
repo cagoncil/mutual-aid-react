@@ -1,7 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
+import Button from 'react-bootstrap/Button';
+import './styles.css';
 
-const LandingPage = () => {
+const LandingPage = ({ modalShow, setModalShow }) => {
   return (
     <main className="glass container p-4 p-sm-5">
       <h1>We (Still) Got This!</h1>
@@ -11,7 +12,12 @@ const LandingPage = () => {
         Interested in collective action? The <em>"auntie"</em> uprising is here. <strong>Join the revolution today!</strong>
       </p>
       <hr/>
-      <button className="primary-pink join-now me-4" data-bs-toggle="modal" href="#RegisterToggle">Join Now</button>
+      <Button 
+        className='button primary-pink join-now'
+        onClick = {() => setModalShow(!modalShow)}
+      >
+        Join Now
+      </Button>
     </main>
   )
 }
